@@ -1,0 +1,20 @@
+Scenarios:
+
+- No campaigns?
+
+- Add CPA
+
+- Add CPL
+
+- Add CPC
+
+- Add EPC
+
+- Add CPC
+
+- Revshare
+
+- Flat Fee
+
+- No Active Deal
+

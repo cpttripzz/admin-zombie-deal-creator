@@ -1,0 +1,726 @@
+[
+  {
+    "id": 4812,
+    "account_id": 565,
+    "url": "http://www.dpbolvw.net/click-7233150-11460798?sid=V1_[tracking-subid]",
+    "deal": [
+      {
+        "deal_type": "Cpa",
+        "currency": "USD",
+        "clicks_source": null,
+        "rules": [
+          {
+            "type": "Deals::ValueRangeRule",
+            "value": "11.0",
+            "range_start": "0.0",
+            "range_end": "9999999999999.99",
+            "date_range_start": "2017-07-31",
+            "date_range_end": "2017-07-31",
+            "period_type": "Custom"
+          }
+        ],
+        "comment": null
+      },
+      {
+        "deal_type": "Cpl",
+        "currency": "USD",
+        "clicks_source": null,
+        "rules": [
+          {
+            "type": "Deals::ValueRangeRule",
+            "value": "12.0",
+            "range_start": "0.0",
+            "range_end": "9999999999999.99",
+            "date_range_start": "2017-07-31",
+            "date_range_end": "2017-07-31",
+            "period_type": "Custom"
+          }
+        ],
+        "comment": null
+      },
+      {
+        "deal_type": "Cpc",
+        "currency": "USD",
+        "clicks_source": "Google Analytics Unique Clicks",
+        "rules": [
+          {
+            "type": "Deals::ValueRangeRule",
+            "value": "13.0",
+            "range_start": "0.0",
+            "range_end": "9999999999999.99",
+            "date_range_start": "2017-07-31",
+            "date_range_end": "2017-07-31",
+            "period_type": "Custom"
+          }
+        ],
+        "comment": null
+      },
+      {
+        "deal_type": "Epc",
+        "currency": "USD",
+        "clicks_source": "Google Analytics Clicks",
+        "rules": [
+          {
+            "type": "Deals::ValueRangeRule",
+            "value": "11.0",
+            "range_start": "0.0",
+            "range_end": "9999999999999.99",
+            "date_range_start": "2017-07-31",
+            "date_range_end": "2017-07-31",
+            "period_type": "Monthly"
+          },
+          {
+            "type": "Deals::MaxValueRule",
+            "value": 0.21,
+            "range_start": "0.0",
+            "range_end": "9999999999999.99",
+            "date_range_start": "2017-07-31",
+            "date_range_end": "2017-07-31",
+            "period_type": "Custom",
+            "value_percent": "21"
+          }
+        ],
+        "comment": ""
+      },
+      {
+        "deal_type": "Flat Fee",
+        "currency": "USD",
+        "clicks_source": null,
+        "rules": [
+          {
+            "type": "Deals::ValueRangeRule",
+            "value": "21.0",
+            "range_start": "0.0",
+            "range_end": "9999999999999.99",
+            "date_range_start": "2017-07-31",
+            "date_range_end": "2017-11-24",
+            "period_type": "Custom"
+          }
+        ],
+        "comment": null
+      },
+      {
+        "deal_type": "Rev Share",
+        "currency": "USD",
+        "clicks_source": null,
+        "rules": [
+          {
+            "type": "Deals::ValueRangeRule",
+            "value": 0.51,
+            "range_start": "0.0",
+            "range_end": "9999999999999.99",
+            "date_range_start": "2017-07-31",
+            "date_range_end": "2017-07-31",
+            "period_type": "Custom",
+            "value_percent": "51"
+          }
+        ],
+        "comment": null
+      }
+    ],
+    "product_lists": [
+      11144
+    ],
+    "affiliate_link_type": "SubID link",
+    "link_name": "Link 27",
+    "active": true,
+    "effective_date": null,
+    "product_id": 565,
+    "dealsVersions": [
+      {
+        "id": 4812,
+        "account_id": 565,
+        "url": "http://www.dpbolvw.net/click-7233150-11460798?sid=V1_[tracking-subid]",
+        "deal": [
+          {
+            "deal_type": "Cpa",
+            "currency": "USD",
+            "clicks_source": null,
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "1.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          },
+          {
+            "deal_type": "Cpl",
+            "currency": "USD",
+            "clicks_source": null,
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "2.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          },
+          {
+            "deal_type": "Cpc",
+            "currency": "USD",
+            "clicks_source": "Partner Clicks",
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "3.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          },
+          {
+            "deal_type": "Epc",
+            "currency": "USD",
+            "clicks_source": "NI Tracker Clicks",
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "10.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              },
+              {
+                "type": "Deals::MaxValueRule",
+                "value": "0.2",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom",
+                "value_percent": 20
+              }
+            ],
+            "comment": null
+          },
+          {
+            "deal_type": "Flat Fee",
+            "currency": "USD",
+            "clicks_source": null,
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "1.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Daily"
+              }
+            ],
+            "comment": null
+          },
+          {
+            "deal_type": "Rev Share",
+            "currency": "USD",
+            "clicks_source": null,
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "0.5",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom",
+                "value_percent": 50
+              }
+            ],
+            "comment": null
+          }
+        ],
+        "product_lists": null,
+        "affiliate_link_type": "SubID link",
+        "link_name": "Link 27",
+        "active": true,
+        "effective_date": "2017-08-01T10:59:37",
+        "campaign_type_label": "Active Campaign",
+        "campaign_type_label_class": "active-campaign-mark"
+      },
+      {
+        "id": 4812,
+        "account_id": 565,
+        "url": "http://www.dpbolvw.net/click-7233150-11460798?sid=V1_[tracking-subid]",
+        "deal": [
+          {
+            "deal_type": "Cpa",
+            "currency": "USD",
+            "clicks_source": null,
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "1.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          },
+          {
+            "deal_type": "Cpl",
+            "currency": "USD",
+            "clicks_source": null,
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "2.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          },
+          {
+            "deal_type": "Cpc",
+            "currency": "USD",
+            "clicks_source": "Partner Clicks",
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "3.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          },
+          {
+            "deal_type": "Epc",
+            "currency": "USD",
+            "clicks_source": "NI Tracker Clicks",
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "10.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              },
+              {
+                "type": "Deals::MaxValueRule",
+                "value": "0.2",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom",
+                "value_percent": 20
+              }
+            ],
+            "comment": null
+          },
+          {
+            "deal_type": "Flat Fee",
+            "currency": "USD",
+            "clicks_source": null,
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "1.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Daily"
+              }
+            ],
+            "comment": null
+          }
+        ],
+        "product_lists": null,
+        "affiliate_link_type": "SubID link",
+        "link_name": "Link 27",
+        "active": true,
+        "effective_date": "2017-08-01T10:51:35",
+        "until_date": "01/08/2017",
+        "campaign_type_label": "Past Campaign",
+        "campaign_type_label_class": "past-campaign-mark"
+      },
+      {
+        "id": 4812,
+        "account_id": 565,
+        "url": "http://www.dpbolvw.net/click-7233150-11460798?sid=V1_[tracking-subid]",
+        "deal": [
+          {
+            "deal_type": "Cpa",
+            "currency": "USD",
+            "clicks_source": null,
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "1.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          },
+          {
+            "deal_type": "Cpl",
+            "currency": "USD",
+            "clicks_source": null,
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "2.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          },
+          {
+            "deal_type": "Cpc",
+            "currency": "USD",
+            "clicks_source": "Partner Clicks",
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "3.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          },
+          {
+            "deal_type": "Epc",
+            "currency": "USD",
+            "clicks_source": "NI Tracker Clicks",
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "10.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              },
+              {
+                "type": "Deals::MaxValueRule",
+                "value": "0.2",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom",
+                "value_percent": 20
+              }
+            ],
+            "comment": null
+          }
+        ],
+        "product_lists": null,
+        "affiliate_link_type": "SubID link",
+        "link_name": "Link 27",
+        "active": true,
+        "effective_date": "2017-08-01T10:46:40",
+        "until_date": "01/08/2017",
+        "campaign_type_label": "Past Campaign",
+        "campaign_type_label_class": "past-campaign-mark"
+      },
+      {
+        "id": 4812,
+        "account_id": 565,
+        "url": "http://www.dpbolvw.net/click-7233150-11460798?sid=V1_[tracking-subid]",
+        "deal": [
+          {
+            "deal_type": "Cpa",
+            "currency": "USD",
+            "clicks_source": null,
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "1.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          },
+          {
+            "deal_type": "Cpl",
+            "currency": "USD",
+            "clicks_source": null,
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "2.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          },
+          {
+            "deal_type": "Cpc",
+            "currency": "USD",
+            "clicks_source": "Partner Clicks",
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "3.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          }
+        ],
+        "product_lists": null,
+        "affiliate_link_type": "SubID link",
+        "link_name": "Link 27",
+        "active": true,
+        "effective_date": "2017-08-01T10:44:24",
+        "until_date": "01/08/2017",
+        "campaign_type_label": "Past Campaign",
+        "campaign_type_label_class": "past-campaign-mark"
+      },
+      {
+        "id": 4812,
+        "account_id": 565,
+        "url": "http://www.dpbolvw.net/click-7233150-11460798?sid=V1_[tracking-subid]",
+        "deal": [
+          {
+            "deal_type": "Cpa",
+            "currency": "USD",
+            "clicks_source": null,
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "1.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          },
+          {
+            "deal_type": "Cpl",
+            "currency": "USD",
+            "clicks_source": null,
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "2.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          }
+        ],
+        "product_lists": null,
+        "affiliate_link_type": "SubID link",
+        "link_name": "Link 27",
+        "active": true,
+        "effective_date": "2017-08-01T10:40:32",
+        "until_date": "01/08/2017",
+        "campaign_type_label": "Past Campaign",
+        "campaign_type_label_class": "past-campaign-mark"
+      },
+      {
+        "id": 4812,
+        "account_id": 565,
+        "url": "http://www.dpbolvw.net/click-7233150-11460798?sid=V1_[tracking-subid]",
+        "deal": [
+          {
+            "deal_type": "Cpa",
+            "currency": "USD",
+            "clicks_source": null,
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "1.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          }
+        ],
+        "product_lists": null,
+        "affiliate_link_type": "SubID link",
+        "link_name": "Link 27",
+        "active": true,
+        "effective_date": "2017-08-01T10:38:42",
+        "until_date": "01/08/2017",
+        "campaign_type_label": "Past Campaign",
+        "campaign_type_label_class": "past-campaign-mark"
+      },
+      {
+        "id": 4812,
+        "account_id": 565,
+        "url": "http://www.dpbolvw.net/click-7233150-11460798?sid=V1_[tracking-subid]",
+        "deal": [
+          {
+            "deal_type": "Cpa",
+            "currency": "USD",
+            "clicks_source": null,
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "99.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          }
+        ],
+        "product_lists": null,
+        "affiliate_link_type": "SubID link",
+        "link_name": "Link 27",
+        "active": true,
+        "effective_date": "2017-08-01T09:39:21",
+        "until_date": "01/08/2017",
+        "campaign_type_label": "Past Campaign",
+        "campaign_type_label_class": "past-campaign-mark"
+      },
+      {
+        "id": 4812,
+        "account_id": 565,
+        "url": "http://www.dpbolvw.net/click-7233150-11460798?sid=V1_[tracking-subid]",
+        "deal": [
+          {
+            "deal_type": "Cpa",
+            "currency": "USD",
+            "clicks_source": null,
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "45.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          },
+          {
+            "deal_type": "Cpl",
+            "currency": "USD",
+            "clicks_source": null,
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "20.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          }
+        ],
+        "product_lists": null,
+        "affiliate_link_type": "SubID link",
+        "link_name": "Link 27",
+        "active": true,
+        "effective_date": "2017-07-31T11:30:47",
+        "until_date": "01/08/2017",
+        "campaign_type_label": "Past Campaign",
+        "campaign_type_label_class": "past-campaign-mark"
+      },
+      {
+        "id": 4812,
+        "account_id": 565,
+        "url": "http://www.dpbolvw.net/click-7233150-11460798?sid=V1_[tracking-subid]",
+        "deal": [
+          {
+            "deal_type": "Cpa",
+            "currency": "USD",
+            "clicks_source": null,
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "40.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          }
+        ],
+        "product_lists": null,
+        "affiliate_link_type": "SubID link",
+        "link_name": "Link 27",
+        "active": true,
+        "effective_date": "2014-04-09T10:51:33",
+        "until_date": "31/07/2017",
+        "campaign_type_label": "Past Campaign",
+        "campaign_type_label_class": "past-campaign-mark"
+      }
+    ],
+    "ongoing": true,
+    "fromDate": "2017-08-01T14:00:35.378Z",
+    "futureCampaigns": [],
+    "update_type": "publish_campaign"
+  }
+]

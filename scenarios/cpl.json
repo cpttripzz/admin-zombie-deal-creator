@@ -1,0 +1,205 @@
+[
+  {
+    "id": 4812,
+    "account_id": 565,
+    "url": "http://www.dpbolvw.net/click-7233150-11460798?sid=V1_[tracking-subid]",
+    "deal": [
+      {
+        "rules": [
+          {
+            "type": "Deals::ValueRangeRule",
+            "range_start": 0,
+            "range_end": 9999999999999.99,
+            "date_range_start": "2017-07-31",
+            "date_range_end": "2017-07-31",
+            "value": "1"
+          },
+          {
+            "type": "Deals::MaxValueRule",
+            "range_start": 0,
+            "range_end": 9999999999999.99
+          }
+        ],
+        "deal_type": "Cpa",
+        "currency": "USD"
+      },
+      {
+        "rules": [
+          {
+            "type": "Deals::ValueRangeRule",
+            "range_start": 0,
+            "range_end": 9999999999999.99,
+            "date_range_start": "2017-07-31",
+            "date_range_end": "2017-07-31",
+            "value": "2"
+          },
+          {
+            "type": "Deals::MaxValueRule",
+            "range_start": 0,
+            "range_end": 9999999999999.99
+          }
+        ],
+        "deal_type": "Cpl",
+        "currency": "USD"
+      }
+    ],
+    "product_lists": [
+      11144
+    ],
+    "affiliate_link_type": "SubID link",
+    "link_name": "Link 27",
+    "active": true,
+    "effective_date": null,
+    "product_id": 565,
+    "dealsVersions": [
+      {
+        "id": 4812,
+        "account_id": 565,
+        "url": "http://www.dpbolvw.net/click-7233150-11460798?sid=V1_[tracking-subid]",
+        "deal": [
+          {
+            "deal_type": "Cpa",
+            "currency": "USD",
+            "clicks_source": null,
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "1.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          }
+        ],
+        "product_lists": null,
+        "affiliate_link_type": "SubID link",
+        "link_name": "Link 27",
+        "active": true,
+        "effective_date": "2017-08-01T10:38:42",
+        "campaign_type_label": "Active Campaign",
+        "campaign_type_label_class": "active-campaign-mark"
+      },
+      {
+        "id": 4812,
+        "account_id": 565,
+        "url": "http://www.dpbolvw.net/click-7233150-11460798?sid=V1_[tracking-subid]",
+        "deal": [
+          {
+            "deal_type": "Cpa",
+            "currency": "USD",
+            "clicks_source": null,
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "99.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          }
+        ],
+        "product_lists": null,
+        "affiliate_link_type": "SubID link",
+        "link_name": "Link 27",
+        "active": true,
+        "effective_date": "2017-08-01T09:39:21",
+        "until_date": "01/08/2017",
+        "campaign_type_label": "Past Campaign",
+        "campaign_type_label_class": "past-campaign-mark"
+      },
+      {
+        "id": 4812,
+        "account_id": 565,
+        "url": "http://www.dpbolvw.net/click-7233150-11460798?sid=V1_[tracking-subid]",
+        "deal": [
+          {
+            "deal_type": "Cpa",
+            "currency": "USD",
+            "clicks_source": null,
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "45.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          },
+          {
+            "deal_type": "Cpl",
+            "currency": "USD",
+            "clicks_source": null,
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "20.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          }
+        ],
+        "product_lists": null,
+        "affiliate_link_type": "SubID link",
+        "link_name": "Link 27",
+        "active": true,
+        "effective_date": "2017-07-31T11:30:47",
+        "until_date": "01/08/2017",
+        "campaign_type_label": "Past Campaign",
+        "campaign_type_label_class": "past-campaign-mark"
+      },
+      {
+        "id": 4812,
+        "account_id": 565,
+        "url": "http://www.dpbolvw.net/click-7233150-11460798?sid=V1_[tracking-subid]",
+        "deal": [
+          {
+            "deal_type": "Cpa",
+            "currency": "USD",
+            "clicks_source": null,
+            "rules": [
+              {
+                "type": "Deals::ValueRangeRule",
+                "value": "40.0",
+                "range_start": "0.0",
+                "range_end": "9999999999999.99",
+                "date_range_start": "2017-07-31",
+                "date_range_end": "2017-07-31",
+                "period_type": "Custom"
+              }
+            ],
+            "comment": null
+          }
+        ],
+        "product_lists": null,
+        "affiliate_link_type": "SubID link",
+        "link_name": "Link 27",
+        "active": true,
+        "effective_date": "2014-04-09T10:51:33",
+        "until_date": "31/07/2017",
+        "campaign_type_label": "Past Campaign",
+        "campaign_type_label_class": "past-campaign-mark"
+      }
+    ],
+    "ongoing": true,
+    "fromDate": "2017-08-01T13:00:43.436Z",
+    "futureCampaigns": [],
+    "update_type": "publish_campaign"
+  }
+]
