@@ -3,14 +3,87 @@ const Promise = require('bluebird');
 const rp =  require('request-promise');
 const equal = require('deep-equal');
 const _ = require('lodash');
+const winston = require('winston');
+const uuid = require('uuid/v4');
 
+const periodTypes = ['Custom', 'Monthly', 'Daily', 'Quarterly', 'Weekly'];
+const sources = ['NI Tracker Clicks', 'NI Tracker Unique Clicks', 'Partner Clicks', 'Partner Unique Clicks',
+        'Google Analytics Clicks', 'Google Analytics Unique Clicks'];
+const currencies = ['AUD', 'EUR', 'GBP', 'USD'];
 let dealService = {};
+const dealTypes=["Cpa", "Cpl", "Cpc", "Epc", "Rev Share", "Flat Fee"];
 
+function setSource(dealContract, source) {
+    if(! sources.includes(source)){
+        throw new Error('invalid source');
+    }
+    return Object.assign(dealContract, {clicks_source: source});
+}
+function setPeriodType(dealContract, periodTypeData) {
+    const periodType = periodTypeData.shift();
+    const newDeal = Object.assign(dealContract, {});
+    if(! periodTypes.includes(periodType)){
+        throw new Error('invalid period type');
+    }
+    if (periodType === 'Custom') {
+        const periods = periodTypeData.split('-');
+        if(!periods.length) {
+            throw new Error('invalid custom period date range');
+        }
+        _.set(newDeal, 'rules[0].date_range_start', periods[0]);
+        _.set(newDeal, 'rules[0].date_range_end', periods[1]);
+    }
+    _.set(newDeal, 'rules[0].period_type',periodType);
+
+}
+dealService.populateDeal = function populateDeal(deal){
+    const dealType = deal.shift();
+    const value = deal.shift();
+    const currency = deal.shift();
+
+    if (! dealTypes.includes(dealType)) {
+        throw new Error('invalid deal type');
+    }
+
+    let dealContract = require(`./deal-formats/json/${_.kebabCase(dealType)}`);
+    _.set(dealContract, 'rules[0].value', value);
+
+    const now = new Date().toISOString().slice(0, 10);
+    _.set(dealContract, 'rules[0].date_range_start', now);
+    _.set(dealContract, 'rules[0].date_range_end', now);
+    if(! currencies.includes(currency)) {
+        throw new Error('invalid currency');
+    }
+
+    dealContract.currency = currency;
+    switch(dealType){
+        case 'cpc':
+            dealContract = setSource(dealContract, deal.shift());
+            break;
+        case 'epc':
+            const epcValue = deal.shift();
+            _.set(dealContract, 'rules[1].value', epcValue/100);
+            _.set(dealContract, 'rules[1].value_percent', epcValue);
+            dealContract = setPeriodType(dealContract, deal.shift());
+            dealContract = setSource(dealContract, deal.shift());
+            break;
+        case 'revshare':
+            const revshareValue = deal.shift();
+            _.set(dealContract, 'rules[1].value', revshareValue/100);
+            _.set(dealContract, 'rules[1].value_percent', revshareValue);
+            break;
+        case 'flat':
+            dealContract = setPeriodType(dealContract, deal.shift());
+
+            break;
+    }
+    return dealContract;
+}
 dealService.updateProductLink = async function updateProductLink(options) {
     try {
         const apiOptions = {json: true,method: 'GET'};
-        const {product,site,link} = options;
-        const config = require('./config');
+        const {product,site,link,newDeals,allowUpdate,runEnv} = options;
+        const config = require('./config')(runEnv);
         const {adminApiPath,cirrusApiPath} = config;
         const productLookup = `${cirrusApiPath}products?name=${product}`;
         const productResult = await rp(Object.assign(apiOptions,{uri :productLookup}));
@@ -31,20 +104,33 @@ dealService.updateProductLink = async function updateProductLink(options) {
         const productLinkId = _.get(productLink, '[0].niId');
         const adminLinkUri = `${adminApiPath}product_links/${productLinkId}.json`;
         const adminLinkUriResult = await rp(Object.assign(apiOptions,{uri: adminLinkUri}));
+        const newFormattedDeals = newDeals.map(dealService.populateDeal);
+        const {deal} = adminLinkUriResult;
 
-        // const productResult = `${cirrusApiPath}product_links?count=100000&format=json&joins=partnerUrl&partnerId=`
-
-        const adminVersionsUri = `${adminApiPath}product_links/${productLinkId}/versions.json`;
-        let uri = adminApiPath;
-
-        // const versions = await rp(options);
-        let versions =  JSON.parse('[{"id":19152,"account_id":565,"url":"http://mcafee-consumer-affiliate.evyy.net/c/34020/257432/3165?subId1=AFF\u0026subid2=[tracking-subid]","deal":[{"deal_type":"Cpa","currency":"USD","clicks_source":null,"rules":[{"type":"Deals::ValueRangeRule","value":"66.0","range_start":"0.0","range_end":"9999999999999.99","date_range_start":null,"date_range_end":null,"period_type":"Custom"}],"comment":null}],"product_lists":null,"affiliate_link_type":"SubID link","link_name":"Antivirus US SA Current","active":true,"effective_date":"2016-04-18T09:09:21"},{"id":19152,"account_id":565,"url":"http://mcafee-consumer-affiliate.evyy.net/c/34020/257432/3165?subId1=AFF\u0026subid2=[tracking-subid]","deal":[{"deal_type":"Cpa","currency":"USD","clicks_source":null,"rules":[{"type":"Deals::ValueRangeRule","value":"66.0","range_start":"0.0","range_end":"9999999999999.99","date_range_start":null,"date_range_end":null,"period_type":"Custom"}],"comment":null}],"product_lists":null,"affiliate_link_type":"SubID link","link_name":"Antivirus US SA Current","active":true,"effective_date":"2016-06-05T13:06:17"},{"id":19152,"account_id":565,"url":"http://mcafee-consumer-affiliate.evyy.net/c/34020/257432/3165?subId1=AFF\u0026subid2=[tracking-subid]","deal":[{"deal_type":"Cpa","currency":"USD","clicks_source":null,"rules":[{"type":"Deals::ValueRangeRule","value":"66.0","range_start":"0.0","range_end":"9999999999999.99","date_range_start":null,"date_range_end":null,"period_type":"Custom"}],"comment":null}],"product_lists":null,"affiliate_link_type":"SubID link","link_name":"Antivirus US SA Current","active":true,"effective_date":"2016-07-11T07:25:13"},{"id":19152,"account_id":565,"url":"http://mcafee-consumer-affiliate.evyy.net/c/34020/257432/3165?subId1=AFF\u0026subid2=[tracking-subid]","deal":[{"deal_type":"Cpa","currency":"USD","clicks_source":null,"rules":[{"type":"Deals::ValueRangeRule","value":"66.0","range_start":"0.0","range_end":"9999999999999.99","date_range_start":null,"date_range_end":null,"period_type":"Custom"}],"comment":null}],"product_lists":null,"affiliate_link_type":"SubID link","link_name":"Antivirus US SA Current","active":true,"effective_date":"2016-07-12T06:48:45"},{"id":19152,"account_id":565,"url":"http://mcafee-consumer-affiliate.evyy.net/c/34020/257432/3165?subId1=AFF\u0026subid2=[tracking-subid]","deal":[{"deal_type":"Cpa","currency":"USD","clicks_source":null,"rules":[{"type":"Deals::ValueRangeRule","value":"66.0","range_start":"0.0","range_end":"9999999999999.99","date_range_start":null,"date_range_end":null,"period_type":"Custom"}],"comment":null}],"product_lists":null,"affiliate_link_type":"SubID link","link_name":"Antivirus US SA Current","active":true,"effective_date":"2017-01-25T14:22:26"},{"id":19152,"account_id":565,"url":"http://mcafee-consumer-affiliate.evyy.net/c/34020/257432/3165?subId1=AFF\u0026subid2=[tracking-subid]","deal":[{"deal_type":"Cpa","currency":"USD","clicks_source":null,"rules":[{"type":"Deals::ValueRangeRule","value":"90.0","range_start":"0.0","range_end":"9999999999999.99","date_range_start":null,"date_range_end":null,"period_type":"Custom"}],"comment":null}],"product_lists":null,"affiliate_link_type":"SubID link","link_name":"Antivirus US SA Current","active":true,"effective_date":"2017-05-16T12:09:17"},{"id":19152,"account_id":565,"url":"http://mcafee-consumer-affiliate.evyy.net/c/34020/257432/3165?subId1=AFF\u0026subid2=[tracking-subid]","deal":[{"deal_type":"Cpa","currency":"USD","clicks_source":null,"rules":[{"type":"Deals::ValueRangeRule","value":"100.0","range_start":"0.0","range_end":"9999999999999.99","date_range_start":null,"date_range_end":null,"period_type":"Custom"}],"comment":null}],"product_lists":null,"affiliate_link_type":"SubID link","link_name":"Antivirus US SA Current","active":true,"effective_date":"2017-07-31T13:10:39"},{"id":19152,"account_id":565,"url":"http://mcafee-consumer-affiliate.evyy.net/c/34020/257432/3165?subId1=AFF\u0026subid2=[tracking-subid]","deal":[{"deal_type":"Cpa","currency":"USD","clicks_source":null,"rules":[{"type":"Deals::ValueRangeRule","value":"100.0","range_start":"0.0","range_end":"9999999999999.99","date_range_start":null,"date_range_end":null,"period_type":"Custom"}],"comment":null},{"deal_type":"Cpl","currency":"USD","clicks_source":null,"rules":[{"type":"Deals::ValueRangeRule","value":"90.0","range_start":"0.0","range_end":"9999999999999.99","date_range_start":null,"date_range_end":null,"period_type":"Custom"}],"comment":null}],"product_lists":null,"affiliate_link_type":"SubID link","link_name":"Antivirus US SA Current","active":true,"effective_date":"2017-08-01T07:59:09"}]');
-        const uniqueVersions = versions.reduce( (acc, next) => {
-            const found = acc.filter( oldValue => equal(oldValue,next));
-            if(! found.length) acc.push(next);
-        },[]);
+        const oldDealTypes = deal.map(d => d.deal_type);
+        if(!allowUpdate) {
+            const foundDeals = newFormattedDeals.filter(d => oldDealTypes.includes(d.deal_type));
+            if (foundDeals.length) {
+                throw new Error(`Error: Deal types: ${foundDeals.map(d => d.deal_type).join()} already in use`);
+            }
+        }
+        const apiOutDealsPayload = deal.reduce( (acc, next) => {
+            const foundNewDeal = newFormattedDeals.filter(obj => obj.deal_type === next.deal_type);
+            if (foundNewDeal.length) {
+                acc.push(foundNewDeal[0]);
+            } else {
+                acc.push(next);
+            }
             return acc;
-        console.dir(productLinkId);
+        },[]);
+
+        // winston.add(winston.transports.File, { filename: './api-output.log' });
+        winston.log('info', '', { newDeals,apiOutDealsPayload });
+        const fromDate = new Date().toISOString().slice(0, 10);
+
+        const body = Object.assign(adminLinkUriResult, { fromDate,update_type: "publish_campaign",deal: apiOutDealsPayload})
+        const putOptions = Object.assign(apiOptions,{uri: adminLinkUri,body ,method: 'PUT'});
+        return rp(putOptions);
 
     } catch (err) {
         console.log(err);

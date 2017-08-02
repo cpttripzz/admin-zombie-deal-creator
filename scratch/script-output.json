@@ -1,0 +1,137 @@
+{
+  "id": "16048",
+  "account_id": 74,
+  "url": "http://gen4all.com/109/campaign16771?utm_source=int&utm_medium=mob&utm_campaign=e0a9d358&utm_content=AmiMobMainFR&data2=[tracking-subid]",
+  "deal": [
+    {
+      "rules": [
+        {
+          "type": "Deals::ValueRangeRule",
+          "range_start": 0,
+          "range_end": 9999999999999.99,
+          "date_range_start": "2017-08-02",
+          "date_range_end": "2017-08-02",
+          "value": "20"
+        },
+        {
+          "type": "Deals::MaxValueRule",
+          "range_start": 0,
+          "range_end": 9999999999999.99
+        }
+      ],
+      "deal_type": "Cpa",
+      "currency": "EUR"
+    },
+    {
+      "deal_type": "Cpl",
+      "currency": "EUR",
+      "clicks_source": null,
+      "rules": [
+        {
+          "type": "Deals::ValueRangeRule",
+          "value": "20.0",
+          "range_start": "0.0",
+          "range_end": "9999999999999.99",
+          "date_range_start": null,
+          "date_range_end": null,
+          "period_type": "Custom"
+        }
+      ],
+      "comment": null
+    },
+    {
+      "deal_type": "Cpc",
+      "currency": "GBP",
+      "clicks_source": "NI Tracker Clicks",
+      "rules": [
+        {
+          "type": "Deals::ValueRangeRule",
+          "value": "15.0",
+          "range_start": "0.0",
+          "range_end": "9999999999999.99",
+          "date_range_start": null,
+          "date_range_end": null,
+          "period_type": "Custom"
+        }
+      ],
+      "comment": null
+    }
+  ],
+  "product_lists": [
+    11136
+  ],
+  "affiliate_link_type": "SubID link",
+  "link_name": "Link 16",
+  "active": true,
+  "effective_date": null,
+  "action": "update",
+  "controller": "api/bizms/v1/resources/product_links",
+  "format": "json",
+  "product_link": {
+    "id": 16048,
+    "account_id": 74,
+    "url": "http://gen4all.com/109/campaign16771?utm_source=int&utm_medium=mob&utm_campaign=e0a9d358&utm_content=AmiMobMainFR&data2=[tracking-subid]",
+    "deal": [
+      {
+        "rules": [
+          {
+            "type": "Deals::ValueRangeRule",
+            "range_start": 0,
+            "range_end": 9999999999999.99,
+            "date_range_start": "2017-08-02",
+            "date_range_end": "2017-08-02",
+            "value": "20"
+          },
+          {
+            "type": "Deals::MaxValueRule",
+            "range_start": 0,
+            "range_end": 9999999999999.99
+          }
+        ],
+        "deal_type": "Cpa",
+        "currency": "EUR"
+      },
+      {
+        "deal_type": "Cpl",
+        "currency": "EUR",
+        "clicks_source": null,
+        "rules": [
+          {
+            "type": "Deals::ValueRangeRule",
+            "value": "20.0",
+            "range_start": "0.0",
+            "range_end": "9999999999999.99",
+            "date_range_start": null,
+            "date_range_end": null,
+            "period_type": "Custom"
+          }
+        ],
+        "comment": null
+      },
+      {
+        "deal_type": "Cpc",
+        "currency": "GBP",
+        "clicks_source": "NI Tracker Clicks",
+        "rules": [
+          {
+            "type": "Deals::ValueRangeRule",
+            "value": "15.0",
+            "range_start": "0.0",
+            "range_end": "9999999999999.99",
+            "date_range_start": null,
+            "date_range_end": null,
+            "period_type": "Custom"
+          }
+        ],
+        "comment": null
+      }
+    ],
+    "product_lists": [
+      11136
+    ],
+    "affiliate_link_type": "SubID link",
+    "link_name": "Link 16",
+    "active": true,
+    "effective_date": null
+  }
+}
