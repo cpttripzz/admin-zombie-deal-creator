@@ -114,22 +114,16 @@ dealService.updateProductLink = async function updateProductLink(options) {
                 throw new Error(`Error: Deal types: ${foundDeals.map(d => d.deal_type).join()} already in use`);
             }
         }
-        const apiOutDealsPayload = deal.reduce( (acc, next) => {
-            const foundNewDeal = newFormattedDeals.filter(obj => obj.deal_type === next.deal_type);
-            if (foundNewDeal.length) {
-                acc.push(foundNewDeal[0]);
-            } else {
-                acc.push(next);
-            }
-            return acc;
-        },[]);
 
-        // winston.add(winston.transports.File, { filename: './api-output.log' });
-        winston.log('info', '', { newDeals,apiOutDealsPayload });
+        newFormattedDeals.forEach((newDeal) => {
+            _.remove(deal, obj => obj.deal_type === newDeal.deal_type);
+            deal.push(newDeal);
+        });
+
         const fromDate = new Date().toISOString().slice(0, 10);
-
-        const body = Object.assign(adminLinkUriResult, { fromDate,update_type: "publish_campaign",deal: apiOutDealsPayload})
+        const body = Object.assign(adminLinkUriResult, { fromDate,update_type: "publish_campaign",deal})
         const putOptions = Object.assign(apiOptions,{uri: adminLinkUri,body ,method: 'PUT'});
+        winston.log('info', '', { putOptions });
         return rp(putOptions);
 
     } catch (err) {

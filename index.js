@@ -44,6 +44,6 @@ csv.fromStream(stream)
     .on('end', () => {
         console.log('load successful');
         dealService.updateProductLink(Object.assign({newDeals},_.pick(program, params)))
-            .then(result => winston.log('info', '', { newDeals, result: result.content}))
+            .then(result => winston.log('info', '', { newDeals, result }))
             .catch(err => winston.log('error', '', { result: err.message}))
     });
