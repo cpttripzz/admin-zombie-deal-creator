@@ -9,9 +9,10 @@ const winston = require('winston');
 
 program
     .option('-p, --product <product>', 'Product Name')
+    .option('-i, --product-link-id <productLinkId>', 'Product Link Id')
     .option('-s, --site <site>', 'Site Name')
     .option('-l, --link <link>', 'Link Name')
-    .option('-u, --allow-update <allowUpdate>', 'Allow Updates/ Deletions of existing deals')
+    .option('-u, --dry-run <dryRun>', 'Allow Updates/ Deletions of existing deals')
     .option('-f, --file <file>', 'Csv file path of new deals')
     .option('-r, --run-env <runEnv>', 'What Environment to run script')
 
@@ -32,7 +33,7 @@ if (!fs.existsSync(program.file)) {
 const newDeals = [];
 const stream = fs.createReadStream(program.file);
 winston.add(winston.transports.File, { filename: './api-input.log' });
-const optionalParams = ['allowUpdate', 'runEnv'];
+const optionalParams = ['dryRun', 'runEnv', 'productLinkId'];
 optionalParams.forEach(p => {
     if(program[p]) {
         params.push(p);
